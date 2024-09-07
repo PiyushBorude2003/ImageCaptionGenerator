@@ -73,7 +73,7 @@ caption.
 ## Implementation
 - run ```text_data_processing.ipynb``` to create dictionary.
 - run ```model_build.ipynb``` to create, train the model and evaluate the model.
-- run ```ui.py``` to test the model on custom image.
+
 
 * Place your dataset images into ```data/Images/```
 * Place your dataset captions into ```data/textFiles/```
