@@ -3,6 +3,19 @@ from PIL import Image
 import google.generativeai as genai
 import io
 
+# Hide GitHub icon and other elements
+hide_github_icon = """
+<style>
+.css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob, .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137, .viewerBadge_text__1JaDK {
+    display: none;
+}
+#MainMenu, footer, header {
+    visibility: hidden;
+}
+</style>
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
+
 # Configure the API key (replace 'YOUR_API_KEY' with your actual API key)
 genai.configure(api_key='AIzaSyCnMwd4OFPd0ndKbVWbylWwuZEGU3Q1y3A')
 
