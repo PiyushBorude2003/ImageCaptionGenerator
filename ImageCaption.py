@@ -23,23 +23,25 @@ def generate_image_caption(image: Image.Image):
 # Streamlit UI
 st.title("Image Caption Generator")
 
-# Option to either upload an image or take a picture using the camera
-st.write("Upload an image or take a picture from your camera:")
+# Radio button to let the user choose the input method (upload or camera)
+option = st.radio("Choose input method", ('Upload an image', 'Take a picture with camera'))
 
-# Upload an image file
-uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+image = None
 
-# Take a picture using the camera
-camera_file = st.camera_input("Take a picture")
+# If user chooses to upload an image
+if option == 'Upload an image':
+    uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+    if uploaded_file is not None:
+        image = Image.open(uploaded_file)
 
-# Determine which image to use: uploaded or camera capture
-if uploaded_file is not None:
-    image = Image.open(uploaded_file)
-elif camera_file is not None:
-    image = Image.open(camera_file)
+# If user chooses to take a picture using the camera
+elif option == 'Take a picture with camera':
+    camera_file = st.camera_input("Take a picture")
+    if camera_file is not None:
+        image = Image.open(camera_file)
 
 # If an image has been provided (either uploaded or captured), process it
-if uploaded_file is not None or camera_file is not None:
+if image is not None:
     # Display the uploaded or captured image
     st.image(image, caption="Selected Image", use_column_width=True)
     
