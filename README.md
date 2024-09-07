@@ -61,10 +61,7 @@ caption.
 - ![](images/caption3.JPG)
 - ![](images/caption4.JPG)
 
-#### UI was created using Tkinter.
-Screenshot:
-- ![](images/ui.JPG)
-
+#### UI was created using Streamlit.
 #### Summary
 1. Image sent to CNN(Resnet50).
 2. Last layer of CNN is removed.
@@ -86,7 +83,7 @@ Screenshot:
 1. Tensorflow
 2. Anaconda
 3. Python 3.7
-4. Tkinter
+4. Streamlit
 5. Numpy
 
 #### Training time: ~21 hrs on i7 8750H
