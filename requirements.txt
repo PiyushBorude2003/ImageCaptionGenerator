@@ -1,3 +1,8 @@
-git+https://github.com/path-to-google-generative-ai-repo.git
 streamlit
+Pillow
+google-cloud
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+
 
